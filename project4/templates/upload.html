@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Upload</title>
+    <h1>{{ data_name }}</h1>
+</head>
+<body>
+    {% if form.errors %}
+        <p style="color: rgba(255,75,67,0.65);">
+            Введите все указанные занчения. {{ form.errors|pluralize }}
+        </p>
+    {% endif %}
+    <form action = "" enctype="multipart/form-data" method='post'>
+        <p>Описание: </p><input type = "text" name = "number">
+        <p>Файл: </p><input type = "file" name = "file">
+        <input type = "submit" value = "Отправить">
+    </form>
+    <IMG SRC= "{% static "pic1.png" %}">
+</body>
+</html>

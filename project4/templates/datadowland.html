@@ -1,0 +1,12 @@
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if graphs %}
+    <p>Found {{ graphs|length }} graph{{ graphs|pluralize }}.</p>
+    <ul>
+        {% for graph in graphs %}
+        <li>{{ graph.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No graphs matched your search criteria.</p>
+{% endif %}
